@@ -25,7 +25,7 @@ a { color: var(--river); font-weight: 700; }
   min-height: 88vh;
   background:
     linear-gradient(rgba(21, 32, 43, .38), rgba(21, 32, 43, .72)),
-    url("images/nauvoo-temple.jpg");;
+    url("images/nauvoo-temple.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
