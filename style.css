@@ -1,0 +1,197 @@
+:root {
+  --bg: #fffaf2;
+  --ink: #24313f;
+  --muted: #64748b;
+  --accent: #b45309;
+  --accent-dark: #78350f;
+  --card: #ffffff;
+  --soft: #fef3c7;
+  --river: #0f766e;
+  --shadow: 0 18px 45px rgba(36, 49, 63, 0.14);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+a { color: var(--river); font-weight: 700; }
+.hero {
+  min-height: 88vh;
+  background:
+    linear-gradient(rgba(21, 32, 43, .38), rgba(21, 32, 43, .72)),
+    url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+}
+.hero-overlay {
+  padding: 36px 22px 54px;
+  max-width: 760px;
+}
+.eyebrow {
+  color: #fde68a;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+h1 {
+  color: white;
+  font-size: clamp(3rem, 13vw, 6rem);
+  line-height: .9;
+  margin: 0;
+}
+.subtitle {
+  color: #fff7ed;
+  font-size: 1.15rem;
+  max-width: 620px;
+}
+.hero-buttons, .card-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 13px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+}
+.btn.primary { background: #fbbf24; color: #43270a; }
+.btn.secondary { background: rgba(255,255,255,.18); color: white; border: 1px solid rgba(255,255,255,.45); }
+
+.section {
+  padding: 42px 18px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.section h2 {
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  line-height: 1;
+  margin: 0 0 18px;
+  color: var(--accent-dark);
+}
+.intro p, .final-pitch p {
+  font-size: 1.1rem;
+}
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+.value-grid div, .budget-list div {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+.value-grid span { display: block; color: var(--muted); }
+
+.card-row { flex-direction: column; }
+.photo-card {
+  background: var(--card);
+  border-radius: 28px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+.photo-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+.photo-card div { padding: 18px; }
+.photo-card h3 { margin: 0 0 6px; color: var(--accent-dark); }
+.photo-card p { margin: 0; color: var(--muted); font-weight: 500; }
+
+.timeline {
+  display: grid;
+  gap: 18px;
+}
+.day-card {
+  background: var(--card);
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border-left: 8px solid #f59e0b;
+}
+.date {
+  display: inline-block;
+  background: var(--soft);
+  color: var(--accent-dark);
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+.day-card h3 {
+  font-size: 1.55rem;
+  margin: 12px 0;
+}
+.time-block {
+  border-top: 1px solid #e5e7eb;
+  padding: 14px 0 2px;
+}
+.time-block span {
+  display: inline-block;
+  font-weight: 900;
+  color: var(--river);
+  margin-bottom: 4px;
+}
+.time-block p { margin: 0 0 10px; }
+
+.split {
+  display: grid;
+  gap: 18px;
+}
+.split > div {
+  background: white;
+  border-radius: 30px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.budget-list {
+  display: grid;
+  gap: 10px;
+}
+.budget-list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.budget-list .total {
+  background: var(--accent-dark);
+  color: white;
+}
+.note {
+  color: var(--muted);
+  font-weight: 700;
+}
+.final-pitch {
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  border-radius: 34px;
+  margin-bottom: 34px;
+}
+.final-pitch .btn.primary { color: #43270a; }
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px;
+}
+
+@media (min-width: 760px) {
+  .hero-overlay { padding-left: 64px; }
+  .value-grid { grid-template-columns: repeat(4, 1fr); }
+  .card-row { flex-direction: row; }
+  .photo-card { flex: 1; }
+  .split { grid-template-columns: 1fr 1fr; }
+}
